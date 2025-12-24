@@ -1,9 +1,6 @@
 const fs = require("fs");
 const fsp = require("fs/promises");
 const path = require("path");
-
-// --- Функции из шага 3 ---
-
 async function writeFileAsync(filePath, data) {
     await fsp.writeFile(filePath, data, "utf-8");
 }
