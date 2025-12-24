@@ -18,23 +18,14 @@ async function main() {
 
     console.log("Пользователи загружены:", users.length);
 
-    // --- Сортировка имён ---
     const names = users.map(u => u.name);
     const sortedNames = sortStrings(names);
-
-    // --- Emails ---
     const emails = users.map(u => u.email);
-
-    // --- Создание структуры users/ ---
     await fsTools.createDirAsync("users");
-
-    // --- Запись имён ---
     await fsTools.writeFileAsync("users/names.txt", sortedNames.join("\n"));
-
-    // --- Запись email ---
     await fsTools.writeFileAsync("users/emails.txt", emails.join("\n"));
 
-    console.log("✅ Файлы успешно созданы:");
+    console.log(" Файлы успешно созданы:");
     console.log("users/names.txt");
     console.log("users/emails.txt");
 }
